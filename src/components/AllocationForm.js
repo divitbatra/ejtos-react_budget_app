@@ -1,7 +1,8 @@
 import React, { useContext, useState } from "react";
 import { AppContext } from "../context/AppContext";
+
 const AllocationForm = (props) => {
-  const { dispatch, remaining } = useContext(AppContext);
+  const { dispatch, remaining, currency } = useContext(AppContext);
   const [name, setName] = useState("");
   const [cost, setCost] = useState("");
   const [action, setAction] = useState("");
@@ -70,6 +71,7 @@ const AllocationForm = (props) => {
           <select
             className="custom-select"
             id="inputGroupSelect02"
+            style={{ marginRight: "2rem" }}
             onChange={(event) => setAction(event.target.value)}
           >
             <option defaultValue value="Add" name="Add">
@@ -79,14 +81,17 @@ const AllocationForm = (props) => {
               Reduce
             </option>
           </select>
-          <input
-            required="required"
-            type="number"
-            id="cost"
-            value={cost}
-            style={{ marginLeft: "2rem", size: 10 }}
-            onChange={(event) => setCost(event.target.value)}
-          ></input>
+          <div>
+            <span>{currency}</span>
+            <input
+              required="required"
+              type="number"
+              id="cost"
+              value={cost}
+              style={{ marginLeft: "0", size: 10 }}
+              onChange={(event) => setCost(event.target.value)}
+            ></input>
+          </div>
           <button
             className="btn btn-primary"
             onClick={submitEvent}
