@@ -23,11 +23,12 @@ const Currency = () => {
           style={{ background: "rgba(50,205,50,1%)", border: "none" }}
           onChange={(event) => changeCurrency(event.target.value)}
         >
-          <option value="$" style={{ background: "rgba(50,205,50,50%)" }}>
-            Dollar($)
-          </option>
+          
           <option value="£" style={{ background: "rgba(50,205,50,50%)" }}>
             Pound(£)
+          </option>
+          <option value="$" style={{ background: "rgba(50,205,50,50%)" }}>
+            Dollar($)
           </option>
           <option value="₹" style={{ background: "rgba(50,205,50,50%)" }}>
             Rupee(₹)
